@@ -8,4 +8,4 @@
 
 ## How to Contribute?
 
--> You can add Circuits for different experiments in Arduino so that you can help any bginner to know more about Arduino circuits.
+-> You can add Circuits for different experiments in Arduino so that you can help any beginner to know more about Arduino circuits.
