@@ -11,4 +11,4 @@
 ![7 segment Display](https://user-images.githubusercontent.com/58645688/137630408-54407980-d3e9-43c6-8cfe-1524c114dc89.png)
 
 
-[You can also check the simulation by clicking here!](https://youtu.be/BCoLs10et6Y)
+[You can also check the simulation by clicking here!](https://youtu.be/g6qHsXCnNjo)
