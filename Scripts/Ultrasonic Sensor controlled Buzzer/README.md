@@ -3,7 +3,7 @@
 
 ## Code Explanation
 * The Ultrasonic sensor sends a pulse to the sensor to initiate a reading, then listens for a pulse to return. The length of the returning pulse is proportional to the distance of the object from the sensor.
-* I've added comments all over the program so, you can click here for [Code & its Explanation]()
+* I've added comments all over the program so, you can click here for [Code & its Explanation](https://github.com/tb-rules10/Ardutronics/blob/branch-5/Scripts/Ultrasonic%20Sensor%20controlled%20Buzzer/Code.ino)
 
 
 ## Screenshot
