@@ -26,6 +26,27 @@ void left_shift_string(String &text)
     text[text.length() - 1] = start;
 }
 
+
+void handle_serial_comm()
+{
+
+        if (Serial.available() > 5)
+        {
+            text = Serial.readString();
+            Serial.print("Changing the text to: ");
+            Serial.println(text);
+            if (text.length() < 16)
+            {
+                for (int i = 0; i <= 16 - text.length(); i++)
+                {
+                    text = text + ' ';
+                }
+            }
+            lcd.clear();
+        }
+}
+
+
 void setup()
 {
     // set up the LCD's number of columns and rows:
@@ -38,23 +59,9 @@ int DELAY_TIME = 150;
 void loop()
 {
 
-    if (Serial.available() > 5)
-    {
-        text = Serial.readString();
-        Serial.print("Changing the text to: ");
-        Serial.println(text);
-      	if (text.length() < 16)
-        {
-            for (int i = 0; i <= 16 - text.length(); i++)
-            {
-                text = text + ' ';
-            }
-        }
-        lcd.clear();
-    }
-
     for (int i = 0; i < text.length(); i++)
     {
+      	handle_serial_comm();
         print(text);
         left_shift_string(text);
         delay(DELAY_TIME);
