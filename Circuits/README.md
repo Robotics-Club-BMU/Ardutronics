@@ -8,7 +8,7 @@
 
 ![photo-1603732551658-5fabbafa84eb](https://user-images.githubusercontent.com/58645688/137644218-4b14f202-640e-497f-a06a-4c6d81a72b75.jpg)
 
-## Some Examples of Circuits
+## Table of Content
 
 Sr. No.                    |   Name                    |       Link
 :-------------------------:|:-------------------------:|:-------------------------:
