@@ -19,7 +19,7 @@ class App:
 
     def write_number(self, number: int):
         assert number in range(10), "Number should be between 0 to 9"
-        self.ser.write(self.NUMBERS.encode())
+        self.ser.write(self.NUMBERS[number].encode())
 
     def close_connection(self):
         self.ser.close()
