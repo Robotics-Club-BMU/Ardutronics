@@ -1,0 +1,60 @@
+<html>
+
+<body>
+    <h1>Basic counter server for arduino.</h1>
+    <p>Current Counter: &nbsp;<span class="count">{{COUNT}}</span></p>
+    <p>Current Text: &nbsp;<span class="text">{{TEXT}}</span></p>
+    <p>Set Counter to:</p>
+    <input type='text' class='counter'>
+    <button type='button' class='set_count'>Set Count</button>
+    <p>Set display text to: </p>
+    <input type='text' class='display_text'>
+    <button type='button' class='set_display'>Set Text</button>
+    <p><a href="/increase"><button class=grey>Increment</button></a></p>
+    <p><a href="/decrease"><button class=grey>Decrement</button></a></p>
+    <p><a href="/slide_on"><button class=grey>slide_on</button></a></p>
+    <p><a href="/slide_off"><button class=grey>slide_off</button></a></p>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+</script>
+<script>
+    $(document).ready(function() {
+        $('.set_count').click(function() {
+            var val1 = $('.counter').val();
+            $.ajax({
+                url: "/count",
+                type: "get",
+                data: {
+                    val1: val1
+                },
+                success: function(response) {
+                    console.log(response['result']);
+                    $(".count").html(response['result']);
+                },
+                error: function(xhr) {
+                    alert("error");
+                    //Do Something to handle error
+                }
+            });
+        });
+        $(".set_display").click(function() {
+            var val1 = $('.display_text').val();
+            $.ajax({
+                url: "/txt",
+                type: "get",
+                data: {
+                    val1: val1
+                },
+                success: function(response) {
+                    $(".text").html(response['result']);
+                },
+                error: function(xhr) {
+                    //Do something!
+                }
+            });
+        });
+
+    });
+</script>
+
+</html>
