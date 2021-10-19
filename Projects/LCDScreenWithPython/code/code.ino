@@ -27,7 +27,7 @@ void set_count(int time)
 Features that program needs to have 
 1) Increase the counter, by 1, or decrease by 1 
 2) Set the counter to a particular number
-3) Chage the text
+3) Changing the text
 4) Be able make the text slide
 
 For 1) commands = icr, or dcr
@@ -57,6 +57,7 @@ void handle_commands(String command)
 
     else if (type == "cnt")
     {
+        //cnt 1232
         //Changing the count!
         String sub = command.substring(4);
         COUNT = sub.toInt();
@@ -65,6 +66,7 @@ void handle_commands(String command)
 
     else if (type == "txt")
     {
+        //txt Hello World
         //Changing the text
         String text = command.substring(4);
         for (int i = 0; i < 16 - text.length(); i++)
@@ -75,6 +77,7 @@ void handle_commands(String command)
     }
     else if (type == "sld")
     {
+        //sld on, sld off
         //Changing the text
         String text = command.substring(4);
         if (text == "on")
@@ -120,6 +123,8 @@ void setup()
 void loop()
 {
     handle_serial_comm();
+    if (TEXT.length() > 16)
+        SLIDE = true;
     if (SLIDE)
     {
         for (int i = 0; i < TEXT.length(); i++)
