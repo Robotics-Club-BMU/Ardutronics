@@ -22,6 +22,14 @@ class Arduino:
         command = "sld off"
         self.ser.write(command.encode())
 
+    def slide_icr(self):
+        command = "sdi"
+        self.ser.write(command.encode())
+
+    def slide_dcr(self):
+        command = "sdd"
+        self.ser.write(command.encode())
+
     def increase(self):
         command = "icr"
         self.ser.write(command.encode())
@@ -82,6 +90,18 @@ def slide_on():
 @app.route("/slide_off")
 def slide_off():
     conn.slide_off()
+    return redirect(url_for("home"))
+
+
+@app.route("/slide_icr")
+def slide_icr():
+    conn.slide_icr()
+    return redirect(url_for("home"))
+
+
+@app.route("/slide_dcr")
+def slide_dcr():
+    conn.slide_dcr()
     return redirect(url_for("home"))
 
 
