@@ -1,14 +1,15 @@
-unsigned long myTime;
-
+#include <LiquidCrystal.h>
 #define N 5
 
-int LIGHTS[N] = {2, 3, 4, 5, 6}; // Pin numbers of all the lights!
-int DELAYS[N] = {3, 4, 6, 1, 2}; //In seconds!
+int LIGHTS[N] = {6, 7, 8, 9, 10}; // Pin numbers of all the lights!
+int DELAYS[N] = {3, 4, 6, 1, 2};  //In seconds!
 bool LIGHTS_ON[N] = {false};
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
 
 void setup()
 {
-    pinMode(LED_BUILTIN, OUTPUT);
+    lcd.begin(16, 2);
+    lcd.print("Seconds Passed");
     Serial.begin(9600);
     for (int i = 0; i < N; i++)
     {
@@ -44,6 +45,8 @@ void control_lights(int light, int time)
 
 void loop()
 {
+    lcd.setCursor(0, 1);
+    lcd.print(millis() / 1000);
     delay(1000);
     for (int i = 0; i < N; i++)
     {
