@@ -1,4 +1,3 @@
-![Robotics club](https://socialify.git.ci/Robotics-Club-BMU/Ardutronics/image?description=1&forks=1&issues=1&language=1&owner=1&pulls=1&stargazers=1&theme=Light)
 
 # Ultrasonic Sensor
 
