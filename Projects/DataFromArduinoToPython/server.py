@@ -1,15 +1,13 @@
 from flask import Flask, render_template, url_for, request, redirect, make_response
-import random
 import json
 from time import time
-from random import random
 import serial 
 
 
 app = Flask(__name__)
 arduino = None 
 try:
-    arduino = serial.Serial(port='/dev/ttyACM2', baudrate=115200, timeout=.1)
+    arduino = serial.Serial(port='/dev/ttyACM3', baudrate=115200, timeout=.1)
 except:
     print("Can't connect to arduino. Please check port!")
 
