@@ -1,14 +1,13 @@
-// C++ code
-//
+#define SENSOR 11
+
 void setup()
 {
-  pinMode(11,INPUT);
-  Serial.begin(9600);
+    pinMode(SENSOR, INPUT);
+    Serial.begin(9600);
 }
 
 void loop()
 {
-  int a = digitalRead(11);
-  Serial.println(a);
-
+    int a = digitalRead(SENSOR);
+    Serial.println(a);
 }
